@@ -72,10 +72,24 @@ Then I asked Copilot to check for missing relationships and potential logic bott
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
 
+I used AI to gauge the efficenty of my UML diagram. I created my own UML and asked it to give me feedback based on the requirments of the project. It gave me suggestsions and after checking it out, I either accepted them or denied them. 
+
+The prompts that were the most helpful is when I provided more context and my own thoughts. For example, when creating the UML diagram, I provided my initial ideas and asked for feedback on it. AI provided a list of description of what was missing and why it was important. 
+
 **b. Judgment and verification**
 
 - Describe one moment where you did not accept an AI suggestion as-is.
 - How did you evaluate or verify what the AI suggested?
+
+While using in-line suggestions, AI created two pets with Dog and Cat as objects when the object should have been Pet.It also added an age to the Pet which is not attribute to the object Pet. Owner was also missing some attributes when generated. These were verfied by the error messages that showed up under the objects "Dog" and "Cat" as well as comparing the objects to the classes that were created in pawpal_system.py
+
+![alt text](image-4.png)
+
+The suggestions were modified to match the UML diagram
+
+![alt text](image-6.png)
+
+
 
 ---
 

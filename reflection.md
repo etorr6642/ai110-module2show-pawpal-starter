@@ -106,10 +106,20 @@ The suggestions were modified to match the UML diagram
 - What behaviors did you test?
 - Why were these tests important?
 
+1. Task Validation - This test is important priority must be 1-5 and duration of minutes must be non-negative. If this was not working correctly, it could affect the scheduler. 
+
+2. Generate Daily Schedule - This test is important as high priority task should be dnoe first using shorter duration as a tiebreaker. If not working correctly, low-priority tasks could override a required one. It would also make sure that the tasks do not exceed the time constraint. 
+
+3. Detect Conflicts - This test is important as required tasks need to be completed and the owner should be notified when this happens. 
+
 **b. Confidence**
 
 - How confident are you that your scheduler works correctly?
 - What edge cases would you test next if you had more time?
+
+I have a confidence level of 4 out of 5 stars. All 23 tests pass and the core scheduling behaviors work as expected. 
+
+If given more time, I would test real-world scenarios with multiple pets and overlapping constraints that are not covered yet. The logic holds up well for what is tested so far.
 
 ---
 

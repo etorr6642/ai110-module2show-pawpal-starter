@@ -41,6 +41,29 @@ The scheduler was updated with a few improvements to make it more useful for a p
 - **Filtering** — You can filter the schedule by pet or by completion status. This makes it easier to see what still needs to be done or what one specific pet has scheduled.
 - **Conflict detection** — The scheduler checks for time slot conflicts when two tasks for the same pet are scheduled in the same part of the day. It also warns if a required task did not fit in the schedule. Warnings show up at the bottom of the schedule summary.
 
+## Testing PawPal+
+
+To run the tests, use:
+
+```bash
+python -m pytest
+```
+
+The test suite covers the most important scheduling behaviors so that changes to the logic do not break things silently. Here is what is tested:
+
+- **Input validation** — Tasks with an invalid priority (outside 1–5) or a negative duration raise an error immediately on creation.
+- **Recurrence logic** — Daily, weekly, monthly, and as-needed tasks are checked against the correct intervals. A task that has never been completed is always due. Marking a task complete today does not skip it tomorrow.
+- **Sorting correctness** — Required tasks come before optional ones. Higher priority is scheduled first. When priority is tied, the shorter task goes first so more tasks fit in the day.
+- **Time budget** — Tasks that do not fit in the available time are excluded. A task that fits exactly is included.
+- **Deduplication** — If the same task is assigned to two pets, it only appears once in the schedule.
+- **Conflict detection** — The scheduler flags two tasks in the same category for the same pet, duplicate task descriptions, and required tasks that were dropped because time ran out.
+
+### Confidence Level
+
+★★★★☆
+
+All 23 tests pass and the core scheduling behaviors work as expected. The one missing star is because the UI layer is not tested and there are real-world scenarios with multiple pets and overlapping constraints that are not covered yet. The logic holds up well for what is tested so far.
+
 ### Suggested workflow
 
 1. Read the scenario carefully and identify requirements and edge cases.

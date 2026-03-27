@@ -32,6 +32,15 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+## Smarter Scheduling
+
+The scheduler was updated with a few improvements to make it more useful for a pet owner.
+
+- **Sorting by time** — Tasks are sorted by priority first, then by duration. If two tasks have the same priority, the shorter one is scheduled first. This fits more tasks into the day.
+- **Recurring tasks** — Tasks now check if they are due based on their frequency. A weekly task will only show up if it has not been done in the last 7 days, and a monthly task checks for 30 days. Once a task is marked complete, it records the date so the next check is accurate.
+- **Filtering** — You can filter the schedule by pet or by completion status. This makes it easier to see what still needs to be done or what one specific pet has scheduled.
+- **Conflict detection** — The scheduler checks for time slot conflicts when two tasks for the same pet are scheduled in the same part of the day. It also warns if a required task did not fit in the schedule. Warnings show up at the bottom of the schedule summary.
+
 ### Suggested workflow
 
 1. Read the scenario carefully and identify requirements and edge cases.

@@ -57,11 +57,17 @@ Then I asked Copilot to check for missing relationships and potential logic bott
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
 
+The scheduler considers the time constraint of the owner as well as the tasks that are required and high priority tasks. These tasks are important and need to be done before any lower-priority task and within the time constraint. This constraint mattered the most as it would be unwise to have a schedule filled with tasks that are low priority or not required. 
+
 
 **b. Tradeoffs**
 
 - Describe one tradeoff your scheduler makes.
 - Why is that tradeoff reasonable for this scenario?
+
+The schedule guarentees that the required taks are attempted first and high-priority tasks are preferred. However, it can miss combinations that would fit more total work into the available time. 
+
+This tradeoff is reasonable as the user expects a predictable schedule for their pet and not an optimized one.  
 
 ---
 
@@ -72,7 +78,7 @@ Then I asked Copilot to check for missing relationships and potential logic bott
 - How did you use AI tools during this project (for example: design brainstorming, debugging, refactoring)?
 - What kinds of prompts or questions were most helpful?
 
-I used AI to gauge the efficenty of my UML diagram. I created my own UML and asked it to give me feedback based on the requirments of the project. It gave me suggestsions and after checking it out, I either accepted them or denied them. 
+I used AI to gauge the efficiently of my UML diagram. I created my own UML and asked it to give me feedback based on the requirments of the project. It gave me suggestsions and after checking it out, I either accepted them or denied them. I also used AI for help with the scheduling logic improvements and conflict detection. I was a bit lost on this part and it guided me in the right direction on how to make the scheduling algorithm more efficent for the context of this program. It explained that the greedy approach was better than optimal one in this case as the user expects something predictable. 
 
 The prompts that were the most helpful is when I provided more context and my own thoughts. For example, when creating the UML diagram, I provided my initial ideas and asked for feedback on it. AI provided a list of description of what was missing and why it was important. 
 
@@ -81,7 +87,7 @@ The prompts that were the most helpful is when I provided more context and my ow
 - Describe one moment where you did not accept an AI suggestion as-is.
 - How did you evaluate or verify what the AI suggested?
 
-While using in-line suggestions, AI created two pets with Dog and Cat as objects when the object should have been Pet.It also added an age to the Pet which is not attribute to the object Pet. Owner was also missing some attributes when generated. These were verfied by the error messages that showed up under the objects "Dog" and "Cat" as well as comparing the objects to the classes that were created in pawpal_system.py
+While using in-line suggestions, AI created two pets with Dog and Cat as objects when the object should have been Pet.It also added an age to the Pet which is not attribute to the object Pet. These were verfied by the error messages that showed up under the objects "Dog" and "Cat" as well as comparing the objects to the classes that were created in pawpal_system.py. Our UML did not have "Dog" or "Cat" objects, but Pet objects. 
 
 ![alt text](image-4.png)
 

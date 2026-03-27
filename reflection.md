@@ -7,10 +7,46 @@
 - Briefly describe your initial UML design.
 - What classes did you include, and what responsibilities did you assign to each?
 
+My initial UML diagram had the following classes with attributes and methods:
+
+User class with attributes: name, email, password, and pet, plus general getters and setters.
+
+Pet class with attributes: name, breed, and type, plus general getters and setters.
+
+Task class with attributes: name, priority, and duration, plus general getters and setters.
+
+In my initial design, the User class was responsible for holding user data and linking to pet information.
+
+The Pet class was responsible for holding pet-specific data.
+
+The Task class was responsible for holding task data and supporting updates/modifications to tasks.
+
+
+
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+
+![alt text](image.png)
+
+After asking Copilot to review my initial design, I realized I was missing a Scheduler/Planner class, constraints like available time per day, and task behavior methods like add, edit, remove, and list. So I updated the UML to include those pieces.
+
+Then I asked Copilot to check for missing relationships and potential logic bottlenecks. Based on that review, I made additional updates:
+
+1. Added a task_id to the Task class.
+2. Added optional pet_name to better connect tasks to pets.
+3. Enforced required-task-first scheduling.
+4. Added validation for constraints (like non-negative duration and bounded priority).
+5. Made the Planner explicitly connected to a specific User.
+6. These changes made the design more complete and better aligned with the scheduling requirements of the project. 
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
 
 ---
 
@@ -20,6 +56,7 @@
 
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
+
 
 **b. Tradeoffs**
 

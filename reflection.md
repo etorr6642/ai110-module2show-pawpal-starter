@@ -57,7 +57,7 @@ Then I asked Copilot to check for missing relationships and potential logic bott
 - What constraints does your scheduler consider (for example: time, priority, preferences)?
 - How did you decide which constraints mattered most?
 
-The scheduler considers the time constraint of the owner as well as the tasks that are required and high priority tasks. These tasks are important and need to be done before any lower-priority task and within the time constraint. This constraint mattered the most as it would be unwise to have a schedule filled with tasks that are low priority or not required. 
+The scheduler considers the time constraint of the owner as well as the tasks that are required and high priority tasks. These tasks are important and need to be done before any lower-priority task and within the time constraint. This constraint mattered the most as reflected on what tasks are important and required for the user.
 
 
 **b. Tradeoffs**
@@ -129,10 +129,16 @@ If given more time, I would test real-world scenarios with multiple pets and ove
 
 - What part of this project are you most satisfied with?
 
+The part of the project I am most satisfied with is the UML design. My original ideas helped start the basis of the project and expanded on with the help of AI. It led to a very cohesive project. 
+
 **b. What you would improve**
 
 - If you had another iteration, what would you improve or redesign?
 
+If I had another iteration, I would allow the user to input multiple pets, add a task for each pet, then create a schedule for their pets. Once the user inputs a pet, they can insert another then choose a task for their pet using a drop down menu. 
+
 **c. Key takeaway**
 
 - What is one important thing you learned about designing systems or working with AI on this project?
+
+AI can be super helpful when building off the ideas you have. It is very important to develop your own idea, such as the UML for this project, and ask AI to analyze it for missing aspects that we may not have thought of. 

@@ -32,6 +32,22 @@ source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
+## 📸 Demo
+
+![PawPal+ Demo](https://i.imgur.com/NNoskU0.gif)
+
+## Features
+
+- **Priority-based task sorting** — Tasks are displayed sorted by priority (1–5, highest first) so the most important care items are always visible at a glance.
+- **Greedy schedule generation** — The scheduler fits as many tasks as possible into your available daily minutes using a greedy algorithm: required tasks come first, then by priority descending, then by shortest duration when priority is tied.
+- **Daily recurrence tracking** — Tasks carry a `Frequency` (daily, weekly, monthly, as-needed) and a `last_completed_date`. The `is_due_today` method automatically determines whether each task should appear in today's schedule based on elapsed days.
+- **Time-slot conflict detection** — The scheduler warns when two or more tasks for the same pet share the same time-of-day category (e.g., two morning tasks), reporting the combined time overlap.
+- **Duplicate task detection** — A conflict warning is raised if the same task description is scheduled more than once for a pet.
+- **Required-task overflow warning** — If any required task doesn't fit within available minutes, the scheduler surfaces it as an explicit warning rather than silently dropping it.
+- **Remaining tasks report** — After schedule generation, tasks that didn't fit are listed separately so the owner knows what was deferred.
+- **Duplicate entry prevention** — Adding a task with the same title and time-of-day slot that already exists is blocked at the UI level.
+- **Deduplication across pets** — If the same `Task` object is shared across multiple pets, it is counted only once in the daily schedule to prevent double-counting time.
+
 ## Smarter Scheduling
 
 The scheduler was updated with a few improvements to make it more useful for a pet owner.

@@ -142,3 +142,5 @@ If I had another iteration, I would allow the user to input multiple pets, add a
 - What is one important thing you learned about designing systems or working with AI on this project?
 
 AI can be super helpful when building off the ideas you have. It is very important to develop your own idea, such as the UML for this project, and ask AI to analyze it for missing aspects that we may not have thought of. 
+
+The AI feature that was the most effective was using the chat agent. It was able to show me what changes were made to a file before I accepted them. It also helped me debug and create tests for each feature. It was also helpful to create a new chat for each session as AI kept specific records of that issue at hand instead of including other issues and creating confusion when producing results. 
